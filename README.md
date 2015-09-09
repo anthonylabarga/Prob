@@ -1,1 +1,1 @@
-# Prob
+# Respository for TeX files for probability I homework assignments.
