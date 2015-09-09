@@ -59,9 +59,17 @@ $$(A_n \cap B_n)\mbox{ ev} = \bigcup^\infty_{n=1}\bigcap^\infty_{k=n}(A_n \cap B
 
 $$ = \left( \bigcup^\infty_{n=1}\bigcap^\infty_{k=n}A_n \right) \bigcap \left( \bigcup^\infty_{n=1} \bigcap^\infty_{k=n}B_n \right) = (A_n \mbox{ ev})\cap (B_n\mbox{ ev}) $$
 
-\item Claim: $A_n \to A$ and $\mbox{ ev} = (A_n \mbox{ ev})\cap (B_n\mbox{ ev})$
+\item Claim: $A_n \to A$ and $B_n \to B$ implies $A_n \cup B_n \to A \cup B$.
 
-\item
+Proof: This proof makes use of the result from problem 5.
+
+$A_n \to A \Leftrightarrow A = A_n \mbox{ io} = A_n \mbox{ ev}$, and likewise with $B_n$. We can establish the limit of $(A_n \cup B_n)$ by finding its ev and io. In view of (5), $(A_n \cup B_n)\mbox{ io} = (A_n\mbox{ io}) \cup (B_n\mbox{ io})=A \cup B$, and $(A_n \cup B_n)\mbox{ ev} = (A_n\mbox{ ev}) \cup (B_n\mbox{ ev})=A \cup B$. Since the ev and io of $A_n \cup B_n$ coincide, $A_n \cup B_n \to A \cup B$.
+
+\item $A_n \to A$ and $B_n \to B$ implies $A_n \cap B_n \to A \cap B$.
+
+Proof: This proof makes use of the result from problem 6.
+
+$A_n \to A \Leftrightarrow A = A_n \mbox{ io} = A_n \mbox{ ev}$, and likewise with $B_n$. We can establish the limit of $(A_n \cap B_n)$ by finding its ev and io. In view of (6), $(A_n \cap B_n)\mbox{ io} = (A_n\mbox{ io}) \cap (B_n\mbox{ io})=A \cap B$, and $(A_n \cap B_n)\mbox{ ev} = (A_n\mbox{ ev}) \cap (B_n\mbox{ ev})=A \cap B$. Since the ev and io of $A_n \cap B_n$ coincide, $A_n \cap B_n \to A \cap B$.
 
 \item
 
