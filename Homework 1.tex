@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{fullpage,amsmath,amsfonts,amssymb,graphicx}
+\usepackage{fullpage,amsmath,amsfonts,amssymb,graphicx,bbm}
 
 \begin{document}
 
@@ -41,7 +41,15 @@ $$ A_n \mbox{ io}=\bigcap^\infty_{n=1}\bigcup^\infty_{k=n} A_k = (B \cup C) \cap
 
 $$ A_n \mbox{ ev}=\bigcup^\infty_{n=1}\bigcap^\infty_{k=n} A_k = (B \cap C) \cup (B \cap C)\dots = (B \cap C)$$
 
-\item
+\item To show that $\mathbbm{1}_{A_n\mbox{ io}}(\omega)=\overline{\lim}_{n\to\infty}\mathbbm{1}_{A_n}(\omega)$ $\forall \omega$, note that 
+
+$$\overline{\lim_{n\to\infty}}\mathbbm{1}_{A_n}(\omega)=\lim_{k \to \infty} \sup_{n \geq k} \mathbbm{1}_{A_n}(\omega)=\lim_{k \to \infty} \max \{\mathbbm{1}_{A_n}(\omega)\}=\lim_{k \to \infty} \mathbbm{1}_{\bigcup^\infty_{n \geq k} A_k}(\omega)=\mathbbm{1}(\mathbbm{1}_{\bigcup^\infty_{k=1}}=1\forall k)$$ $$=\mathbbm{1}_{ \bigcap^\infty_{k=1} \bigcup^\infty_{n=k}A_k} = \mathbbm{1}_{A_n\mbox{ io}}(\omega) $$
+
+To show that $\mathbbm{1}_{A_n\mbox{ ev}}(\omega)=\underline{\lim}_{n\to\infty}\mathbbm{1}_{A_n}(\omega)$ $\forall \omega$, note that 
+
+$$\underline{\lim}_{n\to\infty}\mathbbm{1}_{A_n}(\omega)=\lim_{k \to \infty} \inf_{n \geq k} \mathbbm{1}_{A_n}(\omega)=\lim_{k \to \infty} \min \{\mathbbm{1}_{A_n}(\omega)\}=\lim_{k \to \infty} \mathbbm{1}_{\bigcap^\infty_{n \geq k} A_k}(\omega)$$ $$=\mathbbm{1}(\mathbbm{1}_{\bigcap^\infty_{k=1}}=1\forall k>k_0) = \mathbbm{1}_{A_n\mbox{ ev}}(\omega) $$
+
+Lastly, to show that $A_n \to A \Leftrightarrow \lim_{n \to \infty} \mathbbm{1}_{A_n}(\omega)=\mathbbm{1}_{A}(\omega)$
 
 \item Claim: $(A_n \cup B_n)\mbox{ io} = (A_n \mbox{ io})\cup (B_n\mbox{ io})$
 
@@ -71,9 +79,15 @@ Proof: This proof makes use of the result from problem 6.
 
 $A_n \to A \Leftrightarrow A = A_n \mbox{ io} = A_n \mbox{ ev}$, and likewise with $B_n$. We can establish the limit of $(A_n \cap B_n)$ by finding its ev and io. In view of (6), $(A_n \cap B_n)\mbox{ io} = (A_n\mbox{ io}) \cap (B_n\mbox{ io})=A \cap B$, and $(A_n \cap B_n)\mbox{ ev} = (A_n\mbox{ ev}) \cap (B_n\mbox{ ev})=A \cap B$. Since the ev and io of $A_n \cap B_n$ coincide, $A_n \cap B_n \to A \cap B$.
 
-\item
+\item To express $(A_n \cap A_{n+1}^c)\mbox{ io}$ in terms of $A_n\mbox{ ev}$ and $A_n\mbox{ io}$, notice that $(A_n \cap A_{n+1}^c)\mbox{ io} = (A_n \mbox{ io}) \cap (A_{n+1}^c\mbox{ io}) = (A_n \mbox{ io}) \cap (A_{n+1}\mbox{ ev})^c$. Lastly, notice that $A_{n+1}\mbox{ ev} = A_{n}\mbox{ ev}$ by shifting the indices on the union and intersection operators, so this is equal to $(A_n \mbox{ io}) \cap (A_{n}\mbox{ ev})^c$.
 
-\item
+\item This can be done by proving the bi-implication 
+
+$$A \in \{\omega \in \Omega : g_n(\omega) \to g(\omega)\} \Leftrightarrow A \in \bigcap^{\infty}_{k=1} A_n^{(k)}\mbox{ ev}$$
+
+Suppose $A \in \{\omega \in \Omega : g_n(\omega) \to g(\omega)\}$. For pointwise convergence to occur on $\Omega$, $\forall k>0$, there must be some $n_0$ such that for $n\geq n_0$, $A \in A_n^{(k)}$; i.e. $A\in  A_n^{(k)}\mbox{ ev}$ $\forall k$. This last can be reformulated as $A \in \bigcap^{\infty}_{k=1} A_n^{(k)}\mbox{ ev}$.
+
+Suppose $A \in \bigcap^{\infty}_{k=1} A_n^{(k)}\mbox{ ev}$. Then $\forall k$, $A\in  A_n^{(k)}\mbox{ ev}$. This means that for every $k$, there must be some $n_0$ such that for $n\geq n_0$, $A \in A_n^{(k)}$; i.e. for $n \geq n_0$ we have $|g_n(\omega)-g(\omega)|<k^{-1}$. This implies that pointwise convergence is occurring on $\Omega$, $\forall k>0$. So $A \in \{\omega \in \Omega : g_n(\omega) \to g(\omega)\}$.
 
 \end{enumerate}
 
