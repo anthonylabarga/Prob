@@ -11,7 +11,7 @@ Due 9/17
 \end{flushright}
 
 \begin{center}
-Homework \#1
+Homework \#2
 \end{center}
 
 \begin{enumerate}
@@ -89,13 +89,13 @@ To prove (i), consider that since $\sigma(\{(-\infty,b]| -\infty<b<\infty \})$ c
 
 \item[(i)] If $B=(-\infty,b]$, where $b>1$, then $B \cap [0,1] = \Omega$, so $\Omega \in \mathcal{B}_0$.
 
-\item[(ii)] If $A=B \cap [0,1]$, then $A^c=B^c \cup (-\infty,0) \cup (1,\infty)$
+\item[(ii)] If $A=B \cap [0,1]$, then $A^c$ is whatever part of $[0,1]$ is not covered by $B$. So $A^c=B^c \cap [0,1]$, which is a legal set since $B^c\in\mathcal{F}$.
 
 \item[(iii)] If $A_i=B_i\cap[0,1]$, then $\bigcup^\infty_{i=1}A_i= \left( \bigcup^\infty_{i=1} B_i \right)\cap \left( \bigcup^\infty_{i=1} [0,1] \right) = V \cap [0,1]$, where $V$, being a countable union of elements of $\mathcal{B}^1$, is an element thereof.
 
 \end{itemize}
 
-\item[(b)]
+\item[(b)] To show that these two fields are identical, we need to verify that if $B \in \mathcal{B}^1$, then $B \cap [0,1] \equiv B \subseteq [0,1]$. Suppose $\omega \in B \cap [0,1]$; then $\omega$ is in the overlap between $B$ and $[0,1]$. Since in this context $\Omega=[0,1]$, this is equivalent of $\omega$ being in $B$ which must be contained in $[0,1]$. So $\omega \in B \subseteq [0,1]$.
 
 \end{itemize}
 
