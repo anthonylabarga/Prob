@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage,amsmath,amsfonts,amssymb,graphicx,bbm}
+
+\begin{document}
+
+\begin{flushright}
+
+Anthony Labarga\\
+Due 9/17
+\end{flushright}
+
+\begin{center}
+Homework \#1
+\end{center}
+
+\begin{enumerate}
+
+\item $\bigcup_{i=1}^\infty A_i$ is a field if it satisfies the necessary three requirements:
+
+\begin{itemize}
+\item[(i)] Since each $A_n$ is itself a field, each one must contain $\Omega$. Thus $\Omega \in \bigcup^\infty_{i=1} A_i$.
+
+\item[(ii)] If $B \in \bigcup^\infty_{i=1} A_i$, then $B \in A_i$ for at least one $i$. Then $B^c \in A_i$ as well, and so $B^c \in \bigcup^\infty_{i=1} A_i$.
+
+\item[(iii)] Let $B_1,\dots,B_n$ be a collection of members of $ \bigcup^\infty_{i=1} A_i$. Since $\{A_i\}$ is a monotone increasing sequence, if $B_i \in A_i$, then $B_i \in A_j$ $\forall j>i$. Thus there is some $A_k$ s.t. $B_1,\dots,B_n \in A_k$. Since $A_k$ is a field, $\bigcup^n_{i=1} B_i \in A_k$ as well. So then $\bigcup^n_{i=1} B_i \in \bigcup^\infty_{i=1} A_k$.
+
+\end{itemize}
+
+\item
+
+\begin{itemize}
+\item[a)] 
+
+\begin{itemize}
+\item[(i)] Let $B$ be $\{1,\dots,n\}$; then $B \cup C = \mathcal{N} = \Omega$, so $\Omega=\mathcal{F}_n$.
+
+\item[(ii)] We have two cases for the two possible forms of $A$:
+
+If $A=B$, then $A^c$ can be expressed as $B' \cup\{n+1,\dots\}$ where $B'=\{\omega \in \{1,\dots,n\}: \omega \notin B\}$, so $A^c \in \mathcal{F}_n$.
+
+If $A=B\cup C$, then $A^c$ is some finite subset of $\mathcal{N}$, so $A^c \in \mathcal{F}_n$.
+
+\item[(iii)] Let $\{A_i\}$ be a collection of legal members of $\mathcal{F}_n$. Let $\mathcal{T}_1$ be the indices of those which have the $B$ form, and $\mathcal{T}_2$ be the indices of those which have the $B \cup C$ form. Then 
+
+$$\bigcup^\infty_{i=1} A_i= \left( \bigcup^\infty_{t \in \mathcal{T}_1} A_t \right) \cup \left( \bigcup^\infty_{t \in \mathcal{T}_2} A_t \right) = V_1 \cup V_2 = W$$
+
+where $V_1$ is a subset of $\{1,\dots,n\}$, and $V_2=Y \cup C$, where $Y$ is a subset of $\{1,\dots,n\}$. So $W$ is a union between some subset of $\{1,\dots,n\}$ and $C$, which is a legal member of $\mathcal{F}_n$.
+
+\end{itemize}
+
+\item[b)] If $A$ has the $B$ form, then whatever subset of $\{1,\dots,n\}$ it makes up is also a valid subset of $\{1,\dots,n+1\}$, so $A\in \mathcal{F}_{n+1}$ also.
+
+If $A$ has the $B\cup C$ form, then we can reconstitute $A$ in $\mathcal{F}_{n+1}$ by having $n+1$ added to the subset of $\{1,\dots,n+1\}$ that the new $B$ is a subset of. Then the reconstituted $A$ has the same $B \cup C$ form, with the new $C$ being $\{n+2,\dots\}$.
+
+\item[c)] We can show this if we can find some countable union of $A$s which aren't in $\mathcal{F}=\bigcup_{n=1}^\infty \mathcal{F}_n$. Let $\{A_i\}$ be a collection of singletons, each containing the ith prime. These are valid, because there's always some $n$ such that the ith prime is a subset of $\{1,\dots,n\}$. Yet $\bigcup^\infty_{i=1}A_i$ is not in $\mathcal{F}$. For no $n$ is it possible to construct the set of primes from either a subset of $\{1,\dots,n\}$ or the union of such a subset and $\{n+1,\dots\}$ The former is finite, and the latter must contain composite numbers. So $\mathcal{F}$ is ot a $\sigma$-field.
+
+\end{itemize}
+
+\item
+
+\begin{itemize}
+
+\item[(i)] If every $\mathcal{F}_t$ is a $\sigma$-field, then $\Omega \in \mathcal{F}_t$ $\forall t$. So then $\Omega \in \bigcap \mathcal{F}_t$.
+
+\item[(ii)] If $A \in \bigcap \mathcal{F}_t$, then $A \in \mathcal{F}_t$ $\forall t$, so $A^c \in \mathcal{F}_t$ $\forall t$, and thus $A \in \bigcap \mathcal{F}_t$.
+
+\item[(iii)] If $\{A_i\} \in \bigcap \mathcal{F}_t$, then $\{A_i\} \in \mathcal{F}_t$ $\forall t$, so $\bigcup^\infty_{i=1} A_i \in \mathcal{F}_t$ $\forall t$, and thus $\bigcup^\infty_{i=1} A_i \in \bigcap \mathcal{F}_t$.
+
+\end{itemize}
+
+\item If $\mathcal{F}$ is a field, then it's closed under finite union. Since $A_n \to A$, $A=\bigcup^\infty_{n=1} A_n$. Thus to say that $A \in \mathcal{F}$ is to say that $\bigcup^\infty_{n=1} A_n \in \mathcal{F}$. Since the first two conditions of a field and a $\sigma$-field are the same, and limit closure allows us to admit countable unions to $\mathcal{F}$, $\mathcal{F}$ is a $\sigma$-field.
+
+\item These two $\sigma$-fields are the same if we can show that $$\{(-\infty,b]| -\infty<b<\infty \} \in \sigma(\{(a,b]| -\infty \leq a<b<\infty \}) \hspace{5mm} \mbox{(i)}$$ and
+
+$$ \{(a,b]| -\infty \leq a<b<\infty \} \in \sigma(\{(-\infty,b]| -\infty<b<\infty \})  \hspace{5mm} \mbox{(ii)}$$
+
+To prove (i), consider that since $\sigma(\{(a,b]| -\infty \leq a<b<\infty \})$ contains $\mathbbm{R}$, all the countable intersections of sets of the form $(a,b]$, and all the latter's complements. We can build the set $\{(-\infty,b]| -\infty<b<\infty \}$ as $ \left( \bigcup^\infty_{n=1}(b,b+n] \right)^c$.
+
+To prove (i), consider that since $\sigma(\{(-\infty,b]| -\infty<b<\infty \})$ contains $\mathbbm{R}$, all the countable intersections of sets of the form $(-\infty,b]$, and all the latter's complements. We can build the set $\{(a,b]| -\infty \leq a<b<\infty \}$ as $(-\infty,a]^c \cap (-\infty,b]$.
+
+
+\item 
+
+\begin{itemize}
+\item[(a)]
+
+\begin{itemize}
+
+\item[(i)] If $B=(-\infty,b]$, where $b>1$, then $B \cap [0,1] = \Omega$, so $\Omega \in \mathcal{B}_0$.
+
+\item[(ii)] If $A=B \cap [0,1]$, then $A^c=B^c \cup (-\infty,0) \cup (1,\infty)$
+
+\item[(iii)] If $A_i=B_i\cap[0,1]$, then $\bigcup^\infty_{i=1}A_i= \left( \bigcup^\infty_{i=1} B_i \right)\cap \left( \bigcup^\infty_{i=1} [0,1] \right) = V \cap [0,1]$, where $V$, being a countable union of elements of $\mathcal{B}^1$, is an element thereof.
+
+\end{itemize}
+
+\item[(b)]
+
+\end{itemize}
+
+\item This can be done using the ``good sets" idea discussed in class, where a ``good set" is one of the form $(A \cap B_1)\cup(A^c \cap B_2)$. 
+
+This two-step approach requires us to show that all elements of $\mathcal{F} \cup \{A\}$ have the form $(A \cap B_1)\cup(A^c \cap B_2)$, and secondly that $(A \cap B_1)\cup(A^c \cap B_2)$ forms a $\sigma$-field.
+
+Let $\omega \in \mathcal{F} \cup \{A\}$, and let $B_0$ and $B_1$ be arbitrary members of $\mathcal{F}$. Either $\omega \in A$ or it isn't. If it is, then $\omega \in A\cap B_1$, in which case $\omega \in (A \cap B_1)\cup(A^c \cap B_2)$ as well. If it's not, then $\omega \in (A^c \cap B_2)$, which implies that it's in $(A \cap B_1)\cup(A^c \cap B_2)$ as well.
+
+Now to show that sets of the form $(A \cap B_1)\cup(A^c \cap B_2)$ constitute a $\sigma$-field:
+
+\begin{itemize}
+\item[(i)] Since $\mathcal{F}$ is a $\sigma$-field, either $B_1$ or $B_2$ can be $\Omega$. If this were the case, $(A \cap B_1)\cup(A^c \cap B_2)$ would be $\Omega$, so $\Omega$ is encapsulated in the sets of this form.
+
+\item[(ii)] Let $(A \cap B_1)\cup(A^c \cap B_2)$
+ be an arbitrary set of this form. Then its complement is $(A \cap B_1)^c \cap (A^c \cap B_2)^c = (A^c \cup B_1^c) \cap (A \cup B_2^c)=(A^c \cap B_2^c) \cup (A \cap B_1^c) \cup (B_1^c \cap B_2^c)$. We need to show that this collapses into the original form, which is true if $(B_1^c \cap B_2^c) \subseteq (A^c \cap B_2^c) \cup (A \cap B_1^c)$.
+ 
+If $\omega \in (B_1^c \cap B_2^c)$, it's either in $A$ or not. 
+
+If it is, then it's in $A\cap B_1^c$, so it's in $(A^c \cap B_2^c) \cup (A \cap B_1^c)$. If it's not, then it's in $(A \cap B_1^c)$ and therefore $(A^c \cap B_2^c) \cup (A \cap B_1^c)$.
+
+So this set is closed under complementation.
+ 
+\item[(iii)] Let $\{C_i\}$ be a collection of sets with the form $(A \cap B_1)\cup(A^c \cap B_2)$. Then $$\bigcup^\infty_{i=1}C_i=\bigcup^\infty_{i=1}(A \cap B_{1_i})\cup(A^c \cap B_{2_i})= \left( A \cap \left(\bigcup^\infty_{i=1} B_{1_i} \right) \right)\cup \left( A^c \cap \left(\bigcup^\infty_{i=1} B_{2_i} \right) \right)$$
+
+Both $\bigcup^\infty_{i=1} B_{1_i}$ and $\bigcup^\infty_{i=1} B_{2_i}$ are legal members of $\mathcal{F}$, so this form of sets is closed under countable union.
+
+\end{itemize}
+
+\item $\mathcal{A}$ is a field because:
+
+\begin{itemize}
+\item[(i)] Since $A$ is allowed to be the empty set, and $\Omega = \emptyset^c$, $\Omega \in \mathcal{A}$.
+\item[(ii)] Every element $A$ of $\mathcal{A}$ is either a finite set of integers or the complement thereof. If the former, then the complement of $A$ is the complement of a finite set of integers, which is a legal member of $\mathcal{A}$. If the latter, then the complement of $A$ is a finite set of integers, which is a legal member of $\mathcal{A}$.
+\item[(iii)] Suppose $\{A_1,\dots, A_n \}$ is a set of legal members of $\mathcal{A}$, some of which are finite sets and some of which are complements thereof. Then $$\bigcup^n_{i=1} A_i= \left(\bigcup^\infty_{i \in \mathcal{T}_1} A_i \right) \cup \left(\bigcup^\infty_{i \in \mathcal{T}_2} A_i \right)=B_1 \cup B_2 = C$$ 
+
+where $\mathcal{T}_1$ is the set of indices of the $A_i$s which are finite sets and $\mathcal{T}_2$ is the set of indices of the $A_i$s which are complements thereof. So then $B_1$ is a finite set, and 
+$B_2$ is the complement of the intersection of the sets whose complements are indexed by $\mathcal{T}_2$. Thus $C$ is the complement of a finite set; $C^c=\{\omega \in \mathcal{N}: \omega \notin A_i \hspace{2mm} \forall i\in \mathcal{T}_1 \land \omega \in A_j^c \hspace{2mm} \forall j\in \mathcal{T}_2\}$.
+\end{itemize}
+
+However, $\mathcal{A}$ isn't a $\sigma$-field because it isn't closed under countable union. Let $A_i$ be a countable set of singletons, each containing the ith prime. Clearly each $A_i$ is a legal member of $\mathcal{A}$. But $A=\bigcup_{i=1}^\infty A_i$ is not a legal member of $\mathcal{A}$; it's not finite, but neither is its complement, the set of composite integers. So while $\mathcal{A}$ is a field, it's not a $\sigma$-field. 
+
+\item $$\left(\bigcup^\infty_{i=1} A_i \right) \Delta \left(\bigcup^\infty_{i=1} B_i \right)=\left( \left( \bigcup^\infty_{i=1} A_i \right)^c \cap \bigcup^\infty_{i=1} B_i \right) \cup \left( \bigcup^\infty_{i=1} A_i \cap \left( \bigcup^\infty_{i=1} B_i \right)^c \right)$$ 
+
+$$=\left(  \bigcap^\infty_{i=1} A_i^c \cap \bigcup^\infty_{i=1} B_i \right) \cup \left( \bigcup^\infty_{i=1} A_i \cap  \bigcap^\infty_{i=1} B_i^c \right)=\left(  \bigcup^\infty_{i=1}( A_i^c \cap B_i )\right) \cup \left( \bigcup^\infty_{i=1} (A_i \cap  B_i^c) \right)$$ 
+
+$$= \bigcup ^\infty_{i=1} \left(\left( A_i^c \cap B_i \right) \cup \left(  A_i \cap B_i^c \right) \right)= \bigcup^\infty_{i=1}(A_i \Delta B_i)$$
+
+\item We are given that $A \subseteq B \cup (A \Delta B)$; this implies that $P(A) \leq P(B \cup (A \Delta B)) \leq P(B)+P(A \Delta B)$, since $B$ and $(A \Delta B)$ are not necessarily disjoint. 
+
+Thus $|P(A)-P(B)|\leq |P(B)+P(A \Delta B)-P(B)|=|P(A \Delta B)|=P(A \Delta B)$.
+
+
+\end{enumerate}
+
+
+\end{document}
